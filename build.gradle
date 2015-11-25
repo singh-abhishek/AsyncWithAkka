@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+project.ext{
+    akka_actor = 'com.typesafe.akka:akka-actor_2.10:2.3.12'
+    mysql = 'mysql:mysql-connector-java:5.1.33'
+
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(project.ext.akka_actor, project.ext.mysql)
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
